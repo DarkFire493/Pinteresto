@@ -13,26 +13,26 @@
 
 <div class="form-group">  
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :pin_name, :class => 'form-control' %>
+    <%= form.label :name, "Pin's Name:" %>
+    <%= form.text_field :name, id: :pin_name, :class => 'form-control', :placeholder => "Example: My Pin" %>
   </div>
 </div>
 
 <div class="form-group">
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :pin_photo, :class => 'form-control' %>
+    <%= form.label :photo, "Photo (URL):" %>
+    <%= form.text_field :photo, id: :pin_photo, :class => 'form-control', :placeholder => "www.example.com/picutres/sample.png" %>
   </div>
 </div>
 
 <div class="form-group">  
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :pin_description, :class => 'form-control' %>
+    <%= form.label :description, "Brief Description:" %>
+    <%= form.text_area :description, id: :pin_description, :class => 'form-control', :placeholder => "Lorem Ipsum", :rows => "10", :cols => "30" %>
   </div>
 </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
