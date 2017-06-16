@@ -2,10 +2,10 @@
 
 <h1>Pins</h1>
 
-<div class="container">
+<div id="container">
 
   <% @pins.each do |pin| %>
-    <div class="col-md-3">
+    <div class="item" style="width:25%">
       <div class="thumbnail">
         <%= pin.name %>
         <%= image_tag(pin.photo, :class => 'img-responsive') %>
@@ -14,7 +14,9 @@
         <div class="buttons" style="margin-top:10px; margin-bottom:10px">
           <%= link_to 'Show', pin, :class => 'btn' %>
           <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
-          <%= link_to 'Destroy', pin, :class => 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% if user_signed_in? %>
+            <%= link_to 'Destroy', pin, :class => 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </div>
 
       </div>
@@ -23,5 +25,23 @@
 
   <br>
 
+  <% if user_signed_in? %>
   <%= link_to 'New Pin', new_pin_path, :class => "btn btn-primary" %>
+  <% end %>
+
 </div>
+
+<script type="text/javascript">
+    $('.grid').masonry({
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+  $(window).load(function(){
+    $('.grid').masonry({
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+  })
+</script>
