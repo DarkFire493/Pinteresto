@@ -32,6 +32,23 @@
 </div>
 
 <script type="text/javascript">
+    var $container = $('#container');
+    //initialize
+    $container.masonry({
+      columnWidth: 200
+      itemSelector: '.item'
+    });
+  $(window).load(function(){
+    var $container = $('#container');
+    //initialize
+    $container.masonry({
+      columnWidth: 200
+      itemSelector: '.item'
+    });
+  })
+</script>
+
+<!--<script type="text/javascript">
     $('.grid').masonry({
       // options
       itemSelector: '.grid-item',
@@ -44,4 +61,4 @@
       columnWidth: 200
     });
   })
-</script>
+</script>-->
